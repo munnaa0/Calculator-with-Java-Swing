@@ -22,6 +22,7 @@ public class ChildCalculator extends JFrame implements ActionListener {
 	boolean btnEnabled = false;
 	boolean equal = false;
 	String Ans = "E";
+	String Equation;
 	String displayText = "";
 	String Operator ="";
 	String AfterOperator;
@@ -246,6 +247,7 @@ public class ChildCalculator extends JFrame implements ActionListener {
 		FinalResult = 0.0;
 		Percentage = 0.0;
 		equal = false;
+		Equation = "";
 	}
 	///****************************Calculate Method**********************************************
 	public void Calculate(String OperatorChange) {
@@ -263,7 +265,8 @@ public class ChildCalculator extends JFrame implements ActionListener {
 			FinalResult = firstNUM / secondNUM;
 		}
 		if(equal == true) {
-			textfield.setText(FinalResult.toString());
+			Equation = firstNUM + " " + Operator + " "  + secondNUM + " = " + FinalResult.toString(); 
+			textfield.setText(Equation);
 			Ans = FinalResult.toString();
 			ClearVariable();
 		}
@@ -455,8 +458,14 @@ public class ChildCalculator extends JFrame implements ActionListener {
 				}
 		//**************************For Equal Button*****************************************
 		else if(e.getSource()==btnEqual) {
-			equal = true;
-			Calculate(Operator);
+			if(Operator =="E") {
+				textfield.setText("Do Operations First");
+			}
+			else {
+				equal = true;
+				Calculate(Operator);
+			}
+			
 		}
 		//***************************Clear button*******************************
 		else if(e.getSource()==btnClear) {
