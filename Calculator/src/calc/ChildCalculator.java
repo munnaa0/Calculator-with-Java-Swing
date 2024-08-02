@@ -147,7 +147,7 @@ public class ChildCalculator extends JFrame implements ActionListener {
 		 btnEqual.setFont(new Font("Tahoma",Font.BOLD,15));
 		 btnEqual.setFocusable(false);
 		 
-		 ///Button Disable
+		 ///Button Disable for first time
 		 setEnable();
 		 
 		 //Adding ActionListner to Button
@@ -178,7 +178,7 @@ public class ChildCalculator extends JFrame implements ActionListener {
 		///Adding elements************************************************************
 		this.add(textfield);
 		this.add(panel);
-		///Button add to panel
+		///*****************************Button add to panel*********************
 		panel.add(btnON);
 		panel.add(btnDel);
 		panel.add(btnPercentage);
@@ -201,7 +201,7 @@ public class ChildCalculator extends JFrame implements ActionListener {
 		panel.add(btnEqual);
 		this.setVisible(true);
 	}
-	///SetVisibility Button
+	///***************************SetVisibility Button******************************
 	public void setEnable() {
 		
 		ClearVariable();
@@ -282,6 +282,8 @@ public class ChildCalculator extends JFrame implements ActionListener {
 	}
 
 	///********************************Main Code*****************************************
+	
+	
 	///************************ON Button**************************************************
 	@Override
 	public void actionPerformed(ActionEvent e) {
